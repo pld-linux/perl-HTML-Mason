@@ -53,7 +53,7 @@ na bazach danych.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-perl Makefile.PL --no-prompts
+%{__perl} Makefile.PL --no-prompts
 %{__make}
 
 %{!?_without_tests:%{__make} test}
