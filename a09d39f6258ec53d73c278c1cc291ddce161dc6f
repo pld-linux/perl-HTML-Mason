@@ -1,0 +1,4 @@
+- updated to 0.71
+- modified BuildRequires
+- small changes in %%files
+- added perl-HTML-Mason-paths.patch
