@@ -4,14 +4,13 @@
 Summary:	HTML-Mason perl module
 Summary(pl):	Modu³ perla HTML-Mason
 Name:		perl-HTML-Mason
-Version:	1.015
-Release:	6
+Version:	1.05
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 Patch0:		%{name}-fix.patch
-Patch1:		%{name}-no-mod_perl-test.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-26
 BuildRequires:	perl >= 5.6
 BuildRequires:	perl-MLDBM
@@ -32,11 +31,10 @@ HTML-Mason jest w pe³ni funkcjonalnym systemem tworzenia serwisów www.
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
 %patch0 -p0
-%patch1 -p1
 
 %build
 find . -type f | xargs -n 200 -r perl -pi -e 's|/local/bin/perl\d*|/bin/perl|g'
-perl Makefile.PL
+perl Makefile.PL --no-prompts
 %{__make}
 
 %install
