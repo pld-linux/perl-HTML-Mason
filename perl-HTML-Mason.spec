@@ -2,16 +2,17 @@
 Summary:	HTML-Mason perl module
 Summary(pl):	Modu³ perla HTML-Mason
 Name:		perl-HTML-Mason
-Version:	0.4
-Release:	3
+Version:	0.71
+Release:	1
 Copyright:	GPL
 Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/HTML/HTML-Mason-%{version}.tar.gz
+Patch:		perl-HTML-Mason-paths.patch
 BuildRequires:	perl >= 5.005_03-10
-BuildRequires:	perl-File-Tools
+BuildRequires:	perl-MLDBM
 %requires_eq	perl
-Requires:	perl-File-Tools
+Requires:	perl-MLDBM
 Requires:	%{perl_sitearch}
 BuildRoot:	/tmp/%{name}-%{version}-root
 
@@ -30,7 +31,10 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT/usr/src/examples/%{name}-%{version}
 make install DESTDIR=$RPM_BUILD_ROOT
+
+cp -a {samples,eg} $RPM_BUILD_ROOT/usr/src/examples/%{name}-%{version}
 
 (
   cd $RPM_BUILD_ROOT%{perl_sitearch}/auto/HTML/Mason
@@ -46,11 +50,16 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {Changes,README}.gz
-%doc htdocs/* samples eg
+%doc {Changes,README}.gz htdocs/*
 
+%{perl_sitelib}/Apache/Mason.pm
+%{perl_sitelib}/Bundle/HTML/Mason.pm
 %{perl_sitelib}/HTML/Mason.pm
-%{perl_sitelib}/HTML/Mason/*.pm
+%{perl_sitelib}/HTML/Mason
+%{perl_sitelib}/HTML/makeconfig.pl
+
 %{perl_sitearch}/auto/HTML/Mason
+
+/usr/src/examples/%{name}-%{version}
 
 %{_mandir}/man3/*
