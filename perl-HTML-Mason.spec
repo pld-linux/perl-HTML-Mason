@@ -56,7 +56,7 @@ na bazach danych.
 
 %build
 %{__perl} Makefile.PL --no-prompts \
-	INSTALLDIRS=vendor 
+	INSTALLDIRS=vendor
 %{__make}
 
 %{!?_without_tests:%{__make} test}
