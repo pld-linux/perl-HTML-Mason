@@ -16,8 +16,6 @@ BuildRequires:	perl >= 5.6
 BuildRequires:	perl-MLDBM
 BuildRequires:	perl-Time-HiRes
 BuildRequires:	mod_perl
-%requires_eq	perl
-Requires:	%{perl_sitearch}
 Provides:	perl(HTML::Mason::Config)
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
