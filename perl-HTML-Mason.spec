@@ -8,14 +8,14 @@
 Summary:	Mason Perl module - high-performance, dynamic web site authoring system
 Summary(pl):	Modu³ Perla Mason - wysokowydajny system do tworzenia dynamicznych stron WWW
 Name:		perl-HTML-Mason
-Version:	1.26
-Release:	4
+Version:	1.28
+Release:	1
 Epoch:		3
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	96848be080c2382285f5faafe24d4a00
+# Source0-md5:	9d6d47349e8afe67f25539395a931ea6
 URL:		http://www.masonhq.com/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -25,14 +25,14 @@ BuildRequires:	perl(Scalar::Util) >= 1.01
 BuildRequires:	perl-CGI >= 2.46
 BuildRequires:	perl-Cache-Cache >= 1.0
 BuildRequires:	perl-Class-Container >= 0.07
-BuildRequires:	perl-Exception-Class >= 1.10
+BuildRequires:	perl-Exception-Class >= 1.14
 BuildRequires:	perl-HTML-Parser
-BuildRequires:	perl-Params-Validate >= 0.24
+BuildRequires:	perl-Params-Validate >= 0.70
 %endif
 Requires:	perl(File::Spec) >= 0.8
 Requires:	perl-Class-Container >= 0.07
-Requires:	perl-Exception-Class >= 1.10
-Requires:	perl-Params-Validate >= 0.24
+Requires:	perl-Exception-Class >= 1.14
+Requires:	perl-Params-Validate >= 0.70
 Conflicts:	perl-Apache-Filter < 1.021
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
