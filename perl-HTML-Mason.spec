@@ -1,19 +1,23 @@
-%define		perl_sitelib	%(eval "`perl -V:installsitelib`"; echo $installsitelib)
+%include	/usr/lib/rpm/macros.perl
 Summary:	HTML-Mason perl module
 Summary(pl):	Modu³ perla HTML-Mason
 Name:		perl-HTML-Mason
 Version:	0.71
-Release:	1
+Release:	2
 Copyright:	GPL
 Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/HTML/HTML-Mason-%{version}.tar.gz
-Patch:		perl-HTML-Mason-paths.patch
-BuildRequires:	perl >= 5.005_03-10
+Patch0:		perl-HTML-Mason-paths.patch
+Patch1:		perl-HTML-Mason-fix.patch
+BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	perl >= 5.005_03-14
 BuildRequires:	perl-MLDBM
+BuildRequires:	perl-Time-HiRes
+BuildRequires:	mod_perl
 %requires_eq	perl
-Requires:	perl-MLDBM
 Requires:	%{perl_sitearch}
+Provides:	perl(HTML::Mason::Config)
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
@@ -24,6 +28,8 @@ HTML-Mason jest w pe³ni funkcjonalnym systemem tworzenia serwisów www.
 
 %prep
 %setup -q -n HTML-Mason-%{version}
+%patch0 -p0
+%patch1 -p0
 
 %build
 perl Makefile.PL
