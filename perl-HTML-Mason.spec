@@ -6,7 +6,7 @@ Summary(pl):	Modu³ perla HTML-Mason
 Name:		perl-HTML-Mason
 Version:	1.05
 Release:	1
-Epoch:		1
+Epoch:		2
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
