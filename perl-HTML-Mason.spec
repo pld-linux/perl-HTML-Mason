@@ -9,14 +9,14 @@ Summary:	Mason - High-performance, dynamic web site authoring system
 Summary(pl):	Mason - Wysokowydajny system do tworzenia dynamicznych stron WWW
 Name:		perl-HTML-Mason
 Version:	1.18
-Release:	1
+Release:	2
 Epoch:		3
 License:	GPL/Artistic
 URL:		http://www.masonhq.com/
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 BuildRequires:	perl >= 5.6
-BuildRequires:	rpm-perlprov >= 3.0.3-26
+BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{!?_without_tests:1}0
 BuildRequires:	perl(File::Spec) >= 0.8
 BuildRequires:	perl(Scalar::Util) >= 1.01
@@ -53,7 +53,8 @@ na bazach danych.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Makefile.PL --no-prompts
+%{__perl} Makefile.PL --no-prompts \
+	INSTALLDIRS=vendor 
 %{__make}
 
 %{!?_without_tests:%{__make} test}
@@ -63,7 +64,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{perl_sitelib}/HTML/Mason/*.pod
+rm -f $RPM_BUILD_ROOT%{perl_vendorlib}/HTML/Mason/*.pod
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 gzip -9nf samples/README
@@ -76,9 +77,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README UPGRADE CREDITS contrib install
-%{perl_sitelib}/Apache/Mason.pm
-%{perl_sitelib}/HTML/Mason.pm
-%{perl_sitelib}/HTML/Mason
+%{perl_vendorlib}/Apache/Mason.pm
+%{perl_vendorlib}/HTML/Mason.pm
+%{perl_vendorlib}/HTML/Mason
 %dir %{_examplesdir}/%{name}-%{version}
 %dir %{_examplesdir}/%{name}-%{version}/eg
 %attr(755,root,root) %{_examplesdir}/%{name}-%{version}/eg/*.pl
