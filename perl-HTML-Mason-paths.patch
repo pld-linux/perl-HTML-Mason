@@ -1,0 +1,16 @@
+--- HTML-Mason-0.71/eg/parselog.p	Fri May  7 07:18:59 1999
++++ HTML-Mason-0.71/eg.new/parselog.p	Sat Oct  9 00:26:54 1999
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ #
+ # This is a code skeleton for parsing the various events in a Mason
+ # system log.
+--- HTML-Mason-0.71/eg/perflog.p	Fri May  7 07:18:59 1999
++++ HTML-Mason-0.71/eg.new/perflog.p	Sat Oct  9 00:27:04 1999
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ #
+ # This is a Mason system log parser that outputs the average compute
+ # time of each unique URL, in order from slowest to quickest.
