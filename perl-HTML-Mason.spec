@@ -1,8 +1,8 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	HTML
 %define	pnam	Mason
-Summary:	HTML-Mason perl module
-Summary(pl):	Modu³ perla HTML-Mason
+Summary:	HTML::Mason perl module
+Summary(pl):	Modu³ perla HTML::Mason
 Name:		perl-HTML-Mason
 Version:	1.05
 Release:	1
@@ -22,11 +22,11 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-HTML-Mason is a full-featured web site development and delivery
+HTML::Mason is a full-featured web site development and delivery
 system.
 
 %description -l pl
-HTML-Mason jest w pe³ni funkcjonalnym systemem tworzenia serwisów www.
+HTML::Mason jest w pe³ni funkcjonalnym systemem tworzenia serwisów www.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
