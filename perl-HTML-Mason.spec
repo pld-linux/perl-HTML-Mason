@@ -23,7 +23,7 @@ Summary(uk):	Модуль для Perl HTML::Mason
 Summary(zh_CN):	HTML::Mason Perl дё©И
 Name:		perl-HTML-Mason
 Version:	1.1201
-Release:	2
+Release:	3
 Epoch:		2
 License:	GPL/Artistic
 URL:		http://www.masonhq.com/
