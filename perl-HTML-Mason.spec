@@ -15,10 +15,10 @@ Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%
 BuildRequires:	rpm-perlprov >= 3.0.3-26
 BuildRequires:	perl >= 5.6
 BuildRequires:	perl(File::Spec)       >= 0.8
-BuildRequires:	perl(Params::Validate) >= 0.18
-BuildRequires:	perl(Exception::Class) >= 1.01
-BuildRequires:	perl(Cache::Cache)     >= 1.0
-BuildRequires:	perl(Class::Container) >= 0.02
+BuildRequires:	perl-Params-Validate >= 0.18
+BuildRequires:	perl-Exception-Class >= 1.01
+BuildRequires:	perl-Cache-Cache >= 1.0
+BuildRequires:	perl-Class-Container >= 0.02
 BuildRequires:	apache-mod_perl
 Requires:	apache-mod_perl >= 1.22
 BuildArch:	noarch
@@ -39,7 +39,6 @@ du¿ymi serwisami WWW.  Ze wzglêdu na swoje mo¿liwo¶ci, jest to idealna
 baza pod du¿e serwisy o dynamicznie generowanej zawarto¶ci, jak gazety
 internetowe czy oparte na bazach danych sklepy internetowe.
 
-
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
 #%patch0 -p0
@@ -58,8 +57,6 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 gzip -9nf samples/README
 cp -a {samples,eg} $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 mv bin contrib
-
-%define _noautocompressdoc htdocs/*.html htdocs/*/*.html
 
 %clean
 rm -rf $RPM_BUILD_ROOT
