@@ -9,7 +9,7 @@ Release:	6
 Epoch:		1
 License:	GPL
 Group:		Development/Languages/Perl
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 Patch0:		%{name}-fix.patch
 Patch1:		%{name}-no-mod_perl-test.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-26
