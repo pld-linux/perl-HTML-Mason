@@ -35,7 +35,7 @@ HTML-Mason jest w pe³ni funkcjonalnym systemem tworzenia serwisów www.
 
 %build
 perl Makefile.PL
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
