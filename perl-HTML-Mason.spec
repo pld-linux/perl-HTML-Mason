@@ -19,7 +19,7 @@ BuildRequires:	mod_perl
 %requires_eq	perl
 Requires:	%{perl_sitearch}
 Provides:	perl(HTML::Mason::Config)
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 HTML-Mason is a full-featured web site development and delivery system.
