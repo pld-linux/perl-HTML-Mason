@@ -9,7 +9,7 @@ Summary:	Mason Perl module - high-performance, dynamic web site authoring system
 Summary(pl):	Modu³ Perla Mason - wysokowydajny system do tworzenia dynamicznych stron WWW
 Name:		perl-HTML-Mason
 Version:	1.26
-Release:	3
+Release:	4
 Epoch:		3
 # same as perl
 License:	GPL v1+ or Artistic
@@ -67,6 +67,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{perl_vendorlib}/MasonX
 
 rm -f $RPM_BUILD_ROOT%{perl_vendorlib}/HTML/Mason/*.pod
 
@@ -90,3 +91,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_examplesdir}/%{name}-%{version}/eg/httpd.conf
 %{_examplesdir}/%{name}-%{version}/samples
 %{_mandir}/man3/HTML*
+%{perl_vendorlib}/MasonX
