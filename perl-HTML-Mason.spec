@@ -3,7 +3,7 @@ Summary:	HTML-Mason perl module
 Summary(pl):	Modu³ perla HTML-Mason
 Name:		perl-HTML-Mason
 Version:	1.015
-Release:	3
+Release:	4
 Epoch:		1
 License:	GPL
 Group:		Development/Languages/Perl
@@ -56,8 +56,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc *.gz htdocs/*
 %{perl_sitelib}/Apache/Mason.pm
-%{perl_sitelib}/Bundle/HTML/Mason.pm
 %{perl_sitelib}/HTML/Mason.pm
 %{perl_sitelib}/HTML/Mason
 %{_examplesdir}/%{name}-%{version}
-%{_mandir}/man3/*
+%{_mandir}/man3/HTML*
