@@ -3,7 +3,7 @@ Summary:	HTML-Mason perl module
 Summary(pl):	Modu³ perla HTML-Mason
 Name:		perl-HTML-Mason
 Version:	1.015
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL
 Group:		Development/Languages/Perl
@@ -19,6 +19,7 @@ BuildRequires:	perl-Time-HiRes
 BuildRequires:	perl-Params-Validate
 BuildRequires:	apache-mod_perl
 Provides:	perl(HTML::Mason::Config)
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
