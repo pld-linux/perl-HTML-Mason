@@ -9,7 +9,7 @@ Summary:	Mason Perl module - high-performance, dynamic web site authoring system
 Summary(pl):	Modu³ Perla Mason - wysokowydajny system do tworzenia dynamicznych stron WWW
 Name:		perl-HTML-Mason
 Version:	1.26
-Release:	2
+Release:	3
 Epoch:		3
 # same as perl
 License:	GPL v1+ or Artistic
