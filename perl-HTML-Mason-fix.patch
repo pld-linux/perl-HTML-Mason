@@ -1,0 +1,12 @@
+--- makeconfig.pl~	Sun Jun 20 22:00:02 1999
++++ makeconfig.pl	Sun Nov 14 00:58:24 1999
+@@ -1,7 +1,7 @@
+ my $dbmWarnMsg = <<EOF;
+ ==> WARNING: the DBM file format chosen for your system, %s, is
+-inadequate for data caching due to size limitations. If you intend to
+-use data caching we strongly recommend installing Berkley DB (DB_File)
++inadequate for data caching due to size limitations. If you intend to use
++data caching we strongly recommend installing Berkley DB (DB_File)
+ or GNU DBM (GDBM_File), which have no such limitations.
+ EOF
+ 
