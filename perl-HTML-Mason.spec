@@ -5,10 +5,10 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	HTML
 %define	pnam	Mason
-Summary:	Mason - High-performance, dynamic web site authoring system
-Summary(pl):	Mason - Wysokowydajny system do tworzenia dynamicznych stron WWW
+Summary:	Mason - high-performance, dynamic web site authoring system
+Summary(pl):	Mason - wysokowydajny system do tworzenia dynamicznych stron WWW
 Name:		perl-HTML-Mason
-Version:	1.19
+Version:	1.20
 Release:	1
 Epoch:		3
 License:	GPL/Artistic
@@ -23,14 +23,15 @@ BuildRequires:	perl(Scalar::Util) >= 1.01
 BuildRequires:	perl-CGI >= 2.46
 BuildRequires:	perl-Cache-Cache >= 1.0
 BuildRequires:	perl-Class-Container >= 0.07
-BuildRequires:	perl-Exception-Class >= 1.09
+BuildRequires:	perl-Exception-Class >= 1.10
 BuildRequires:	perl-HTML-Parser
 BuildRequires:	perl-Params-Validate >= 0.24
 %endif
 Requires:	perl(File::Spec) >= 0.8
 Requires:	perl-Class-Container >= 0.07
-Requires:	perl-Exception-Class >= 1.09
+Requires:	perl-Exception-Class >= 1.10
 Requires:	perl-Params-Validate >= 0.24
+Conflicts:	perl-Apache-Filter < 1.021
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
