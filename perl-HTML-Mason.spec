@@ -20,21 +20,21 @@ Summary(uk):	Модуль для Perl HTML::Mason
 Summary(zh_CN):	HTML::Mason Perl дё©И
 Name:		perl-HTML-Mason
 Version:	1.11
-Release:	2
+Release:	3
 Epoch:		2
 License:	GPL
 URL:		http://www.masonhq.com/
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 #Patch0:	%{name}-fix.patch
-BuildRequires:	rpm-perlprov >= 3.0.3-26
+BuildRequires:	apache-mod_perl
 BuildRequires:	perl >= 5.6
 BuildRequires:	perl(File::Spec) >= 0.8
-BuildRequires:	perl-Params-Validate >= 0.18
-BuildRequires:	perl-Exception-Class >= 1.01
 BuildRequires:	perl-Cache-Cache >= 1.0
 BuildRequires:	perl-Class-Container >= 0.02
-BuildRequires:	apache-mod_perl
+BuildRequires:	perl-Exception-Class >= 1.01
+BuildRequires:	perl-Params-Validate >= 0.18
+BuildRequires:	rpm-perlprov >= 3.0.3-26
 Requires:	apache-mod_perl >= 1.22
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -86,7 +86,7 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_sitelib}/HTML/Mason
 %dir %{_examplesdir}/%{name}-%{version}
 %dir %{_examplesdir}/%{name}-%{version}/eg
-%{_examplesdir}/%{name}-%{version}/eg/*.pl
-%attr(755,root,root) %{_examplesdir}/%{name}-%{version}/eg/httpd.conf
+%attr(755,root,root) %{_examplesdir}/%{name}-%{version}/eg/*.pl
+%{_examplesdir}/%{name}-%{version}/eg/httpd.conf
 %{_examplesdir}/%{name}-%{version}/samples
 %{_mandir}/man3/HTML*
