@@ -5,8 +5,8 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	HTML
 %define	pnam	Mason
-Summary:	Mason - high-performance, dynamic web site authoring system
-Summary(pl):	Mason - wysokowydajny system do tworzenia dynamicznych stron WWW
+Summary:	Mason Perl module - high-performance, dynamic web site authoring system
+Summary(pl):	Modu³ Perla Mason - wysokowydajny system do tworzenia dynamicznych stron WWW
 Name:		perl-HTML-Mason
 Version:	1.26
 Release:	1
