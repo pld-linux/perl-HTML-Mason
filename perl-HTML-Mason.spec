@@ -11,7 +11,8 @@ Name:		perl-HTML-Mason
 Version:	1.26
 Release:	1
 Epoch:		3
-License:	GPL/Artistic
+# same as perl
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	96848be080c2382285f5faafe24d4a00
