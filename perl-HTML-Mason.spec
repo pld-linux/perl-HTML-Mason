@@ -2,15 +2,16 @@
 Summary:	HTML-Mason perl module
 Summary(pl):	Modu³ perla HTML-Mason
 Name:		perl-HTML-Mason
-Version:	0.71
-Release:	2
-Copyright:	GPL
+Version:	0.8
+Release:	1
+Serial:		1
+License:	GPL
 Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/HTML/HTML-Mason-%{version}.tar.gz
 Patch0:		perl-HTML-Mason-paths.patch
 Patch1:		perl-HTML-Mason-fix.patch
-BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	rpm-perlprov >= 3.0.3-26
 BuildRequires:	perl >= 5.005_03-14
 BuildRequires:	perl-MLDBM
 BuildRequires:	perl-Time-HiRes
@@ -37,10 +38,10 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/usr/src/examples/%{name}-%{version}
+install -d $RPM_BUILD_ROOT/usr/src/examples/%{name}
 make install DESTDIR=$RPM_BUILD_ROOT
 
-cp -a {samples,eg} $RPM_BUILD_ROOT/usr/src/examples/%{name}-%{version}
+cp -a {samples,eg} $RPM_BUILD_ROOT/usr/src/examples/%{name}
 
 (
   cd $RPM_BUILD_ROOT%{perl_sitearch}/auto/HTML/Mason
@@ -66,6 +67,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{perl_sitearch}/auto/HTML/Mason
 
-/usr/src/examples/%{name}-%{version}
+/usr/src/examples/%{name}
 
 %{_mandir}/man3/*
