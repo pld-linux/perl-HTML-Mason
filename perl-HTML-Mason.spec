@@ -1,20 +1,35 @@
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	HTML
-%define	pnam	Mason
-Summary:	HTML::Mason perl module
-Summary(pl):	Modu³ perla HTML::Mason
+%define		pdir	HTML
+%define		pnam	Mason
+Summary:	HTML::Mason Perl module
+Summary(cs):	Modul HTML::Mason pro Perl
+Summary(da):	Perlmodul HTML::Mason
+Summary(de):	HTML::Mason Perl Modul
+Summary(es):	Módulo de Perl HTML::Mason
+Summary(fr):	Module Perl HTML::Mason
+Summary(it):	Modulo di Perl HTML::Mason
+Summary(ja):	HTML::Mason Perl ¥â¥¸¥å¡¼¥ë
+Summary(ko):	HTML::Mason ÆÞ ¸ðÁÙ
+Summary(no):	Perlmodul HTML::Mason
+Summary(pl):	Modu³ Perla HTML::Mason
+Summary(pt):	Módulo de Perl HTML::Mason
+Summary(pt_BR):	Módulo Perl HTML::Mason
+Summary(ru):	íÏÄÕÌØ ÄÌÑ Perl HTML::Mason
+Summary(sv):	HTML::Mason Perlmodul
+Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl HTML::Mason
+Summary(zh_CN):	HTML::Mason Perl Ä£¿é
 Name:		perl-HTML-Mason
 Version:	1.11
-Release:	1
+Release:	2
 Epoch:		2
 License:	GPL
 URL:		http://www.masonhq.com/
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-#Patch0:		%{name}-fix.patch
+#Patch0:	%{name}-fix.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-26
 BuildRequires:	perl >= 5.6
-BuildRequires:	perl(File::Spec)       >= 0.8
+BuildRequires:	perl(File::Spec) >= 0.8
 BuildRequires:	perl-Params-Validate >= 0.18
 BuildRequires:	perl-Exception-Class >= 1.01
 BuildRequires:	perl-Cache-Cache >= 1.0
@@ -54,6 +69,8 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
+rm -f $RPM_BUILD_ROOT%{perl_sitelib}/HTML/Mason/*.pod
+
 gzip -9nf samples/README
 cp -a {samples,eg} $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 mv bin contrib
@@ -67,5 +84,9 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_sitelib}/Apache/Mason.pm
 %{perl_sitelib}/HTML/Mason.pm
 %{perl_sitelib}/HTML/Mason
-%{_examplesdir}/%{name}-%{version}
+%dir %{_examplesdir}/%{name}-%{version}
+%dir %{_examplesdir}/%{name}-%{version}/eg
+%{_examplesdir}/%{name}-%{version}/eg/*.pl
+%attr(755,root,root) %{_examplesdir}/%{name}-%{version}/eg/httpd.conf
+%{_examplesdir}/%{name}-%{version}/samples
 %{_mandir}/man3/HTML*
