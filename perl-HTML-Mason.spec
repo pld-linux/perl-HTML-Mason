@@ -8,7 +8,7 @@ Serial:		1
 License:	GPL
 Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/HTML/HTML-Mason-%{version}.tar.gz
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/HTML/HTML-Mason-%{version}.tar.gz
 Patch0:		perl-HTML-Mason-paths.patch
 Patch1:		perl-HTML-Mason-fix.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-26
@@ -22,7 +22,8 @@ Provides:	perl(HTML::Mason::Config)
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-HTML-Mason is a full-featured web site development and delivery system.
+HTML-Mason is a full-featured web site development and delivery
+system.
 
 %description -l pl
 HTML-Mason jest w pe³ni funkcjonalnym systemem tworzenia serwisów www.
@@ -38,10 +39,10 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/usr/src/examples/%{name}
+install -d $RPM_BUILD_ROOT%{_prefix}/src/examples/%{name}
 make install DESTDIR=$RPM_BUILD_ROOT
 
-cp -a {samples,eg} $RPM_BUILD_ROOT/usr/src/examples/%{name}
+cp -a {samples,eg} $RPM_BUILD_ROOT%{_prefix}/src/examples/%{name}
 
 (
   cd $RPM_BUILD_ROOT%{perl_sitearch}/auto/HTML/Mason
@@ -67,6 +68,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{perl_sitearch}/auto/HTML/Mason
 
-/usr/src/examples/%{name}
+%{_prefix}/src/examples/%{name}
 
 %{_mandir}/man3/*
