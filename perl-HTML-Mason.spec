@@ -49,15 +49,17 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_noautoreq	'perl(HTML::Mason::Exceptions()' 'perl(HTML::Mason::MethodMaker(read_write)'
 
 %description
-Mason is a tool for building, serving and managing large web sites. Its
-features make it an ideal backend for high load sites serving dynamic
-content, such as online newspapers or database driven e-commerce sites.
+Mason is a tool for building, serving and managing large web sites.
+Its features make it an ideal backend for high load sites serving
+dynamic content, such as online newspapers or database driven
+e-commerce sites.
 
 %description -l pl
-Mason jest narzêdziem, s³u¿±cym do budowania, serwowania i zarz±dzania
-du¿ymi serwisami WWW.  Ze wzglêdu na swe mo¿liwo¶ci, jest idealn± baz±
-dla du¿ych serwisów o dynamicznie generowanej zawarto¶ci, np. gazet
-internetowych czy oparte na bazach danych e-sklepów.
+Mason jest narzêdziem s³u¿±cym do budowania i udostêpniania du¿ych
+serwisów WWW oraz do zarz±dzania nimi. Ze wzglêdu na swe mo¿liwo¶ci,
+jest idealn± baz± dla du¿ych serwisów o dynamicznie generowanej
+zawarto¶ci, np. gazet internetowych czy sklepów internetowych opartych
+na bazach danych.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
@@ -65,6 +67,7 @@ internetowych czy oparte na bazach danych e-sklepów.
 %build
 perl Makefile.PL --no-prompts
 %{__make}
+
 %{!?_without_tests:%{__make} test}
 
 %install
