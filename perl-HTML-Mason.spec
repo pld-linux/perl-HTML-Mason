@@ -1,12 +1,11 @@
+%include	/usr/lib/rpm/macros.perl
 %define	pdir	HTML
 %define	pnam	Mason
-%include	/usr/lib/rpm/macros.perl
 Summary:	HTML-Mason perl module
 Summary(pl):	Modu³ perla HTML-Mason
 Name:		perl-HTML-Mason
 Version:	1.015
-Release:	5
-
+Release:	6
 Epoch:		1
 License:	GPL
 Group:		Development/Languages/Perl
@@ -31,7 +30,7 @@ system.
 HTML-Mason jest w pe³ni funkcjonalnym systemem tworzenia serwisów www.
 
 %prep
-%setup -q -n HTML-Mason-%{version}
+%setup -q -n %{pdir}-%{pnam}-%{version}
 %patch0 -p0
 %patch1 -p1
 
