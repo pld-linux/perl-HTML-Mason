@@ -8,7 +8,7 @@
 Summary:	Mason - High-performance, dynamic web site authoring system
 Summary(pl):	Mason - Wysokowydajny system do tworzenia dynamicznych stron WWW
 Name:		perl-HTML-Mason
-Version:	1.17
+Version:	1.18
 Release:	1
 Epoch:		3
 License:	GPL/Artistic
@@ -17,17 +17,19 @@ Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 BuildRequires:	perl >= 5.6
 BuildRequires:	rpm-perlprov >= 3.0.3-26
-%if %{?_without_tests:0}%{!?_without_tests:1}
+%if %{!?_without_tests:1}0
 BuildRequires:	perl(File::Spec) >= 0.8
+BuildRequires:	perl(Scalar::Util) >= 1.01
+BuildRequires:	perl-CGI >= 2.46
 BuildRequires:	perl-Cache-Cache >= 1.0
 BuildRequires:	perl-Class-Container >= 0.07
-BuildRequires:	perl-Exception-Class >= 1.01
-BuildRequires:	perl-Params-Validate >= 0.24
+BuildRequires:	perl-Exception-Class >= 1.09
 BuildRequires:	perl-HTML-Parser
+BuildRequires:	perl-Params-Validate >= 0.24
 %endif
 Requires:	perl(File::Spec) >= 0.8
 Requires:	perl-Class-Container >= 0.07
-Requires:	perl-Exception-Class >= 1.01
+Requires:	perl-Exception-Class >= 1.09
 Requires:	perl-Params-Validate >= 0.24
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
