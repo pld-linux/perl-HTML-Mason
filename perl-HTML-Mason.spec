@@ -8,8 +8,8 @@
 Summary:	Mason - High-performance, dynamic web site authoring system
 Summary(pl):	Mason - Wysokowydajny system do tworzenia dynamicznych stron WWW
 Name:		perl-HTML-Mason
-Version:	1.18
-Release:	2
+Version:	1.19
+Release:	1
 Epoch:		3
 License:	GPL/Artistic
 URL:		http://www.masonhq.com/
