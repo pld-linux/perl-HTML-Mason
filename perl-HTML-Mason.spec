@@ -9,7 +9,7 @@ Summary:	Mason Perl module - high-performance, dynamic web site authoring system
 Summary(pl):	Modu³ Perla Mason - wysokowydajny system do tworzenia dynamicznych stron WWW
 Name:		perl-HTML-Mason
 Version:	1.26
-Release:	1
+Release:	2
 Epoch:		3
 # same as perl
 License:	GPL v1+ or Artistic
@@ -37,7 +37,7 @@ Conflicts:	perl-Apache-Filter < 1.021
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_noautoreq	'perl(Cache::Cache)' 'perl(HTML::Mason::Exceptions()' 'perl(HTML::Mason::MethodMaker(read_write)'
+%define		_noautoreq	'perl(Cache::Cache)' 'perl(HTML::Mason::Exceptions()' 'perl(HTML::Mason::MethodMaker(read_write)' 'perl(Apache)' 'perl(Apache::Constants)'
 
 %description
 Mason is a tool for building, serving and managing large web sites.
