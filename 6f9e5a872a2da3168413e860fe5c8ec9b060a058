@@ -1,0 +1,4 @@
+- version 1.14 (bugfixes and backwards compatibility)
+- provided informative summary
+- updated BR's
+- noautoreq: Cache::Cache, as README says
