@@ -2,7 +2,7 @@
 Summary:	HTML-Mason perl module
 Summary(pl):	Modu³ perla HTML-Mason
 Name:		perl-HTML-Mason
-Version:	1.01
+Version:	1.015
 Release:	1
 Epoch:		1
 License:	GPL
