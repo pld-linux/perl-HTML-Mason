@@ -11,10 +11,12 @@ Group(de):	Entwicklung/Sprachen/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/HTML/HTML-Mason-%{version}.tar.gz
 Patch0:		%{name}-fix.patch
+Patch1:		%{name}-no-mod_perl-test.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-26
 BuildRequires:	perl >= 5.6
 BuildRequires:	perl-MLDBM
 BuildRequires:	perl-Time-HiRes
+BuildRequires:	perl-Params-Validate
 BuildRequires:	mod_perl
 Provides:	perl(HTML::Mason::Config)
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -29,6 +31,7 @@ HTML-Mason jest w pe³ni funkcjonalnym systemem tworzenia serwisów www.
 %prep
 %setup -q -n HTML-Mason-%{version}
 %patch0 -p0
+%patch1 -p1
 
 %build
 find . -type f | xargs -n 200 -r perl -pi -e 's|/local/bin/perl\d*|/bin/perl|g'
