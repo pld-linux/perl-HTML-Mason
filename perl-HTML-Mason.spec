@@ -20,13 +20,12 @@ Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl HTML::Mason
 Summary(zh_CN):	HTML::Mason Perl Ä£¿é
 Name:		perl-HTML-Mason
 Version:	1.1201
-Release:	1
+Release:	2
 Epoch:		2
 License:	GPL/Artistic
 URL:		http://www.masonhq.com/
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-#Patch0:	%{name}-fix.patch
 BuildRequires:	perl >= 5.6
 BuildRequires:	rpm-perlprov >= 3.0.3-26
 Requires:	perl(File::Spec) >= 0.8
@@ -37,9 +36,7 @@ Requires:	perl-Params-Validate >= 0.18
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-# Apache::Request is in libapreq; it's needed only for Mason+mod_perl
-# installation.  Next two are results of broken find-perl-requires.
-%define		_noautoreq	'perl(Apache::Request)' 'perl(HTML::Mason::Exceptions()' 'perl(HTML::Mason::MethodMaker(read_write)'
+%define		_noautoreq	'perl(HTML::Mason::Exceptions()' 'perl(HTML::Mason::MethodMaker(read_write)'
 
 %description
 Mason is a tool for building, serving and managing large web sites. Its
@@ -54,7 +51,6 @@ internetowych czy oparte na bazach danych e-sklepów.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
-#%patch0 -p0
 
 %build
 perl Makefile.PL --no-prompts
