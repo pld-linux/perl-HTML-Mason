@@ -19,10 +19,10 @@ Summary(sv):	HTML::Mason Perlmodul
 Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl HTML::Mason
 Summary(zh_CN):	HTML::Mason Perl Ä£¿é
 Name:		perl-HTML-Mason
-Version:	1.12
+Version:	1.1201
 Release:	1
 Epoch:		2
-License:	GPL
+License:	GPL/Artistic
 URL:		http://www.masonhq.com/
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -48,9 +48,9 @@ content, such as online newspapers or database driven e-commerce sites.
 
 %description -l pl
 Mason jest narzêdziem, s³u¿±cym do budowania, serwowania i zarz±dzania
-du¿ymi serwisami WWW.  Ze wzglêdu na swoje mo¿liwo¶ci, jest to idealna
-baza pod du¿e serwisy o dynamicznie generowanej zawarto¶ci, jak gazety
-internetowe czy oparte na bazach danych sklepy internetowe.
+du¿ymi serwisami WWW.  Ze wzglêdu na swe mo¿liwo¶ci, jest idealn± baz±
+dla du¿ych serwisów o dynamicznie generowanej zawarto¶ci, np. gazet
+internetowych czy oparte na bazach danych e-sklepów.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
