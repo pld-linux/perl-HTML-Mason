@@ -8,14 +8,13 @@
 Summary:	Mason - High-performance, dynamic web site authoring system
 Summary(pl):	Mason - Wysokowydajny system do tworzenia dynamicznych stron WWW
 Name:		perl-HTML-Mason
-Version:	1.14
+Version:	1.15
 Release:	1
 Epoch:		3
 License:	GPL/Artistic
 URL:		http://www.masonhq.com/
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-Patch0:		%{name}-test13.patch
 BuildRequires:	perl >= 5.6
 BuildRequires:	rpm-perlprov >= 3.0.3-26
 %if %{?_without_tests:0}%{!?_without_tests:1}
@@ -50,7 +49,6 @@ na bazach danych.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
-%patch0 -p0
 
 %build
 perl Makefile.PL --no-prompts
