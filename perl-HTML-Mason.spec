@@ -8,17 +8,18 @@
 Summary:	Mason Perl module - high-performance, dynamic web site authoring system
 Summary(pl):	Modu³ Perla Mason - wysokowydajny system do tworzenia dynamicznych stron WWW
 Name:		perl-HTML-Mason
-Version:	1.28
+Version:	1.33
 Release:	1
 Epoch:		3
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	9d6d47349e8afe67f25539395a931ea6
+# Source0-md5:	22c2cd76ed068630708175d570f97277
 URL:		http://www.masonhq.com/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	perl-Module-Build
 %if %{with tests}
 BuildRequires:	perl(File::Spec) >= 0.8
 BuildRequires:	perl(Scalar::Util) >= 1.01
@@ -56,17 +57,18 @@ na bazach danych.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Makefile.PL --no-prompts \
-	INSTALLDIRS=vendor
-%{__make}
+%{__perl} Build.PL \
+	destdir=$RPM_BUILD_ROOT \
+	installdirs=vendor
+./Build
 
-%{?with_tests:%{__make} test}
+%{?with_tests:./Build test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+./Build install
+
 install -d $RPM_BUILD_ROOT%{perl_vendorlib}/MasonX
 
 rm -f $RPM_BUILD_ROOT%{perl_vendorlib}/HTML/Mason/*.pod
@@ -81,14 +83,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Changes README UPGRADE CREDITS contrib install
+%doc Changes README UPGRADE CREDITS contrib
+%{perl_vendorlib}/Bundle/HTML/Mason.pm
 %{perl_vendorlib}/Apache/Mason.pm
 %{perl_vendorlib}/HTML/Mason.pm
 %{perl_vendorlib}/HTML/Mason
-%dir %{_examplesdir}/%{name}-%{version}
-%dir %{_examplesdir}/%{name}-%{version}/eg
-%attr(755,root,root) %{_examplesdir}/%{name}-%{version}/eg/*.pl
-%{_examplesdir}/%{name}-%{version}/eg/httpd.conf
-%{_examplesdir}/%{name}-%{version}/samples
+%{_examplesdir}/%{name}-%{version}
 %{_mandir}/man3/HTML*
+%{_mandir}/man3/Bundle*
 %{perl_vendorlib}/MasonX
