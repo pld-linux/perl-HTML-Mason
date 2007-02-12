@@ -6,7 +6,7 @@
 %define		pdir	HTML
 %define		pnam	Mason
 Summary:	Mason Perl module - high-performance, dynamic web site authoring system
-Summary(pl):	Modu³ Perla Mason - wysokowydajny system do tworzenia dynamicznych stron WWW
+Summary(pl.UTF-8):   ModuÅ‚ Perla Mason - wysokowydajny system do tworzenia dynamicznych stron WWW
 Name:		perl-HTML-Mason
 Version:	1.33
 Release:	2
@@ -46,11 +46,11 @@ Its features make it an ideal backend for high load sites serving
 dynamic content, such as online newspapers or database driven
 e-commerce sites.
 
-%description -l pl
-Mason jest narzêdziem s³u¿±cym do budowania i udostêpniania du¿ych
-serwisów WWW oraz do zarz±dzania nimi. Ze wzglêdu na swe mo¿liwo¶ci,
-jest idealn± baz± dla du¿ych serwisów o dynamicznie generowanej
-zawarto¶ci, np. gazet internetowych czy sklepów internetowych opartych
+%description -l pl.UTF-8
+Mason jest narzÄ™dziem sÅ‚uÅ¼Ä…cym do budowania i udostÄ™pniania duÅ¼ych
+serwisÃ³w WWW oraz do zarzÄ…dzania nimi. Ze wzglÄ™du na swe moÅ¼liwoÅ›ci,
+jest idealnÄ… bazÄ… dla duÅ¼ych serwisÃ³w o dynamicznie generowanej
+zawartoÅ›ci, np. gazet internetowych czy sklepÃ³w internetowych opartych
 na bazach danych.
 
 %prep
