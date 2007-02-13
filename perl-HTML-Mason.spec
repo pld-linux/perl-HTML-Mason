@@ -6,7 +6,7 @@
 %define		pdir	HTML
 %define		pnam	Mason
 Summary:	Mason Perl module - high-performance, dynamic web site authoring system
-Summary(pl.UTF-8):   Moduł Perla Mason - wysokowydajny system do tworzenia dynamicznych stron WWW
+Summary(pl.UTF-8):	Moduł Perla Mason - wysokowydajny system do tworzenia dynamicznych stron WWW
 Name:		perl-HTML-Mason
 Version:	1.33
 Release:	2
