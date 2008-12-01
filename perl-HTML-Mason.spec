@@ -8,14 +8,14 @@
 Summary:	Mason Perl module - high-performance, dynamic web site authoring system
 Summary(pl.UTF-8):	Moduł Perla Mason - wysokowydajny system do tworzenia dynamicznych stron WWW
 Name:		perl-HTML-Mason
-Version:	1.39
+Version:	1.40
 Release:	1
 Epoch:		3
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	06a0b28e23e498a404d4de99698d261f
+# Source0-md5:	920069e013d00de2bf8fb526c4f64c04
 URL:		http://www.masonhq.com/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
